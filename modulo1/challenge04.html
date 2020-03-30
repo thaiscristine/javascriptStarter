@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 04</title>
+</head>
+<body>
+    <script>
+
+        function experiencia(anos){
+
+            if(anos < 1 ){
+                anos = "Iniciate"
+            }
+            else if(anos >= 1 && anos < 3){
+                anos = "Intermediário"
+            }
+            else if(anos >=3 && anos <= 6) {
+                anos = "Avançado"
+            }
+            else if(anos >= 7){
+                anos = "Jedi Master"
+            }
+    
+            return anos;
+        }
+
+        var anosEstudo = 6;
+
+        var resultado = experiencia(anosEstudo);
+        console.log(resultado);
+        // De 0-1 ano : Iniciante
+        // De 1-3 anos: Intermediário 
+        // De 3-6 anos: Avançado
+        // De 7 acima: Jedi Master
+
+    </script>
+</body>
+</html>
