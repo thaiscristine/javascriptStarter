@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 01</title>
+</head>
+<body>
+    <div id="app">
+
+        <button name="newBox">New box</button>
+
+        <div class="boxes">
+            
+        </div>
+    </div>
+
+    <script>
+
+        var button = document.querySelector('button[name=newBox]')
+        //var boxes = document.querySelector('div[class=boxes] ul')
+        
+        button.onclick = function() {
+            //var box = newBox;
+
+            var newBox = document.createElement('div');
+
+            newBox.style.width  = "100px";
+            newBox.style.height = "100px";
+            newBox.style.marginBottom = "10px";
+            newBox.style.backgroundColor = "red";
+            newBox.style.display = "flex";
+            var boxes = document.querySelector('div[class=boxes]')
+            
+            boxes.append(newBox);
+        }
+
+    </script>
+</body>
+</html>
