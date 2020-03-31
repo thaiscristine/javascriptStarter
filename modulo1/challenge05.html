@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 05</title>
+</head>
+<body>
+    <script>
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        function returnSkills(usuarios){
+            for (let usuario of usuarios) {
+
+                var quantSkills = usuario.habilidades.length;
+                var skillsSpace = [];
+
+                for (i = 0; i < quantSkills; i++){
+                    skillsSpace.push(" " + usuario.habilidades[i] );
+                }
+                
+                return "O " + usuario.nome + " possui as habilidades:" + skillsSpace    
+            }
+        }
+
+        console.log(returnSkills(usuarios))
+    </script>
+</body>
+</html>
