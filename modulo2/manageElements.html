@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Elements</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" name="name">
+    </div>
+    <script>
+        
+        var aElement = document.createElement("a");
+        aElement.setAttribute('href', "http://brunatha.com.br");
+        
+        var textElement = document.createTextNode("Click here!");
+        aElement.appendChild(textElement);
+
+        var app = document.querySelector("#app");
+        app.appendChild(aElement);
+
+        var input = document.querySelector("input[name=name]");
+        app.removeChild(input);
+
+    </script>
+</body>
+</html>
