@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com a DOM</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="name">
+        <button>Me pressione</button>
+    </div>
+
+    <script>
+
+        var btnElement = document.querySelector('button');
+        var inputElement = document.querySelector('input[name=name]');
+
+        console.log(btnElement, inputElement)
+
+        btnElement.onclick = function() {
+            alert(inputElement.value);
+        };
+    </script>
+</body>
+</html>
