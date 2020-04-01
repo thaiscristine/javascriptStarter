@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 02</title>
+</head>
+<body>
+    <div id="app">
+
+        <button name="newBox">New box</button>
+
+        <div class="boxes"></div>
+    </div>
+
+    <script>
+
+        var button = document.querySelector('button[name=newBox]')
+        
+        var boxes = document.querySelector('div[class=boxes]')
+        boxes.style.display = "flex";
+        boxes.style.flexDirection = "row";
+
+        function getRandomColor() {
+
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        }
+
+        var newColor = getRandomColor();
+        
+        function createBox() {
+            var newBox = document.createElement('div');
+            newBox.setAttribute('class', 'colorBox');
+            newBox.style.width  = "100px";
+            newBox.style.height = "100px";
+            newBox.style.marginRight = "10px";
+            newBox.style.backgroundColor = "red";
+            
+            return newBox;
+        }
+        
+        button.onclick = function() {
+            boxes.appendChild(createBox());
+        }
+
+        boxes.addEventListener("mouseover", function(e){
+            const childrens = [...this.children]
+                .filter(el => el.className.indexOf('colorBox') > -1);
+               
+
+            const idx = [...this.children]
+                .filter(el => el.className.indexOf('colorBox') > -1)
+                .indexOf(e.target);
+            
+            childrens[idx].style.backgroundColor = getRandomColor();
+            console.log([idx]);
+        });
+        
+    </script>
+</body>
+</html>
