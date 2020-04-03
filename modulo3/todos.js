@@ -2,11 +2,7 @@ var list = document.querySelector('#app ul')
 var btnAdd = document.querySelector('#app button')
 var input = document.querySelector('#app input')
 
-var todos = [
-    'Test application',
-    'Buy tickets',
-    'meet at 17',
-]
+var todos = JSON.parse(localStorage.getItem('list_todos')) || []
 
 function renderTodos() {
 
@@ -35,6 +31,7 @@ renderTodos()
 function deleteTask(position){
     todos.splice(position, 1)
     renderTodos()
+    saveToStorage()
 }
 
 function addTask(){
@@ -43,6 +40,11 @@ function addTask(){
     todos.push(textTask)
     input.value = ''
     renderTodos()
+    saveToStorage()
 }
 
 btnAdd.onclick = addTask
+
+function saveToStorage(){
+    localStorage.setItem('list_todos', JSON.stringify(todos))
+}
